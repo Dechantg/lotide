@@ -27,7 +27,7 @@ assertEqual(words.length, 3);
 
 const resultTwo = tail(["Hello"]);
 
-assertEqual(resultTwo.length, 2);
+assertEqual(resultTwo.length, 0);
 
 const resultThree = tail([]);
 

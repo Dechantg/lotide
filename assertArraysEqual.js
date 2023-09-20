@@ -12,13 +12,13 @@ const eqArrays = function(array1, array2) {
   }
   return result;
 
-}
+};
 
 const assertArraysEqual = function(array1, array2) {
   let result = true;
   if (array1 !== array2) {
     result = false;
-  } 
+  }
   
   if (result) {
     console.log(`✅✅✅ Assertion Passed! ${array1} === ${array2} ✅✅✅`);
@@ -26,7 +26,7 @@ const assertArraysEqual = function(array1, array2) {
     console.log(`⛔️⛔️⛔️ Assertion Failed! ${array1} !== ${array2} ⛔️⛔️⛔️`);
   }
 
-}
+};
 
 
 

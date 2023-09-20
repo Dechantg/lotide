@@ -19,7 +19,7 @@ const assertArraysEqual = function(array1, array2) {
   if (array1 !== array2) {
     result = false;
   }
-  
+
   if (result) {
     console.log(`✅✅✅ Assertion Passed! ${array1} === ${array2} ✅✅✅`);
   } else {
@@ -30,6 +30,11 @@ const assertArraysEqual = function(array1, array2) {
 
 
 
+
 // TEST CODE
 
 assertArraysEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => should PASS
+
+assertArraysEqual([1, 2, 3], [1, 2, 3]); // => true
+
+

@@ -35,11 +35,3 @@ console.log(eqArrays(["1", "2", "3"], ["1", "2", 3])); // => false
 
 assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => should PASS
 
-
-/*
-if (result) {
-    console.log(`✅✅✅ Assertion Passed! ${actual} === ${expected} ✅✅✅`);
-  } else {
-    console.log(`⛔️⛔️⛔️ Assertion Failed! ${actual} !== ${expected} ⛔️⛔️⛔️`);
-  }
-  */

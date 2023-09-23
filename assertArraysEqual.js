@@ -1,43 +1,57 @@
-// compare arrays to make sure they are equal
 
-const eqArrays = (actual, expected) => {
-  // check to make sure the length of the array is equal otherwise return false
+
+// redoing the assertArraysEqual function to ensure that I understand the concepts. This code was done fresh in a second file then copy pasted in for committing
+
+
+// add in my eqArrays function.
+
+const eqArrays = function(actual, expected) {
+
+  // compare array length. if lengths to not match immediatly return false
+
   if (actual.length !== expected.length) {
-    return false;
+          return false;
   }
-  // loop through the array and confirm the values are also equal. if not return false
-    for (let i = 0; i < actual.length; i++) {
-   if (actual[i] !== expected[i]) {
-     return false;
-   }
+
+  // create a loop to compare individual components in the arrays
+
+  for (let i = 0; i < actual.length; i++) {
+    if (actual[i] !== expected[i]) {
+      return false;
+    }
+   
   }
-  // if both validation pass then return true
+
+  // if neither of the above conditions fail, return true
+  
   return true;
+  
 };
 
 
-// create a function to validate arrays. console log a pass or fail message
+// copy past my assertEqual function and rename it to assertArraysEqual
+
+
+
 const assertArraysEqual = (actual, expected) => {
-  //store the results messages into a variable
-  const testPassed = `✅✅✅ Assertion Passed! ${actual} === ${expected} ✅✅✅`;
-  const testFailed = `⛔️⛔️⛔️ Assertion Failed! ${actual} !== ${expected} ⛔️⛔️⛔️`;
-  // callback the values to the eqArrays function to validate
-  if (eqArrays(actual, expected)) {
-    //if eqArrays returns true then console log the testPassed message then return to hault the loop
-    console.log(testPassed);
-    return;
-  } 
-  //if the eqArrays returns false then console log the testFailed message then return the loop to end it
-  console.log(testFailed);
-  return;
-};
+
+  // change function to send actual and expected to the eqArrays function and call for a true or false. If they do not equal true, 
 
 
+  if (eqArrays(actual, expected) === true) {
+    return console.log(`✅✅✅ Assertion Passed! ${actual} === ${expected} ✅✅✅`);
+  }
 
-// TEST CODE
+  // if the condition above is not met then return to console a failure result
+  return console.log(`⛔️⛔️⛔️ Assertion Failed! ${actual} !== ${expected} ⛔️⛔️⛔️`);
 
-assertArraysEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => should PASS
-
-assertArraysEqual([1, 2, 3], [1, 2, 3], false); // => true
+}
 
 
+// test codes
+
+assertArraysEqual([1, 2, 3], [1, 2, 3]) // => true
+assertArraysEqual([1, 2, 3], [3, 2, 1, 4]) // => false
+
+assertArraysEqual(["1", "2", "3"], ["1", "2", "3"]) // => true
+assertArraysEqual(["1", "2", "3"], ["1", "2", 3]) // => false

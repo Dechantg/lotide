@@ -48,4 +48,4 @@ const results = map( words, word => word[0]);
 
 console.log(results);
 
-console.log(assertArraysEqual(results, ["g", "c", "t", "m", "t"], true ));
+assertArraysEqual(results, ["g", "c", "t", "m", "t"], true );

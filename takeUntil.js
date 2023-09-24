@@ -36,13 +36,16 @@ const assertArraysEqual = function(actual, expected) {
 
 
 const takeUntil = (array, callback) => {
-  // ...
-  const newArray = [];
+  // start an empty array to hold results
 
+  const newArray = [];
+//begin loop to go through the values
   for (item of array) {
+    //filter callback vs item if filter conditions match then break the function
     if (callback(item)) {
       break;
     }
+    //push the values into the empty array until the break initializes
    newArray.push(item);
   }
   return newArray;

@@ -1,57 +1,71 @@
+// redoing without function to make sure i understand the principals
+
+// add in my eqArrays function.
+
 const eqArrays = function(actual, expected) {
+
+  // compare array length. if lengths to not match immediatly return false
+
   if (actual.length !== expected.length) {
-    return false;
+          return false;
   }
-  
+
+  // create a loop to compare individual components in the arrays
+
   for (let i = 0; i < actual.length; i++) {
     if (actual[i] !== expected[i]) {
       return false;
     }
-       
+   
   }
+
+  // if neither of the above conditions fail, return true
+  
   return true;
+  
 };
 
 
-const assertArraysEqual = function(actual, expected) {
-  if (eqArrays(actual, expected)) {
-    console.log(`✅✅✅ Assertion Passed! ${actual} === ${expected} ✅✅✅`);
-  } else {
-    console.log(`⛔️⛔️⛔️ Assertion Failed! ${actual} !== ${expected} ⛔️⛔️⛔️`);
+// copy past my assertEqual function and rename it to assertArraysEqual
+
+
+
+const assertArraysEqual = (actual, expected) => {
+
+  // change function to send actual and expected to the eqArrays function and call for a true or false. If they do not equal true, 
+
+
+  if (eqArrays(actual, expected) === true) {
+    return console.log(`✅✅✅ Assertion Passed! ${actual} === ${expected} ✅✅✅`);
   }
 
-};
+  // if the condition above is not met then return to console a failure result
+  return console.log(`⛔️⛔️⛔️ Assertion Failed! ${actual} !== ${expected} ⛔️⛔️⛔️`);
 
+}
 
-const without = function(source, itemsToRemove) {
-  let newArray = [];
-  for (let i = 0; i < source.length; i++) {
-    let add = true;
-    for (let j = 0; j < itemsToRemove.length; j++) {
-      if (source[i] === itemsToRemove[j]) {
-        add = false;
-        break;
-      }
+const without = (array, value) => {
+  // add empty array for storing results in after sorting
+
+  const result = [];
+
+  // begin loop to look for the values to be removed
+  for (item of array) {
+    // set the filter to make sure the value is not being observed
+    if (item != value) {
+      // if filter is met push the value to the new array
+      result.push(item);
     }
-    if (add) {
-      newArray.push(source[i]);
-    }
-    
   }
-  return newArray;
+  return result;
 
 };
 
 
-console.log(without([1, 2, 3], [1])); // => [2, 3]
-console.log(without(["1", "2", "3"], [1, 2, "3"])); // => ["1", "2"]
 
 
-// TEST CODE
 
 const words = ["hello", "world", "lighthouse"];
-console.log(without(words, ["lighthouse"]));
-
-assertArraysEqual(without([1, 2, 3], [1,]), [2, 3], true); // => should PASS
-
-assertArraysEqual([2, 3], [2, 3]); // => should PASS
+without(words, ["lighthouse"]); // no need to capture return value for this test case
+// Make sure the original array was not altered by the without function
+assertArraysEqual(words, ["hello", "world", "lighthouse"]);

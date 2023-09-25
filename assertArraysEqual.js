@@ -2,31 +2,7 @@
 
 // redoing the assertArraysEqual function to ensure that I understand the concepts. This code was done fresh in a second file then copy pasted in for committing
 
-
-// add in my eqArrays function.
-
-const eqArrays = function(actual, expected) {
-
-  // compare array length. if lengths to not match immediatly return false
-
-  if (actual.length !== expected.length) {
-    return false;
-  }
-
-  // create a loop to compare individual components in the arrays
-
-  for (let i = 0; i < actual.length; i++) {
-    if (actual[i] !== expected[i]) {
-      return false;
-    }
-   
-  }
-
-  // if neither of the above conditions fail, return true
-  
-  return true;
-  
-};
+const eqArrays = require('./eqArrays');
 
 
 // copy past my assertEqual function and rename it to assertArraysEqual
@@ -47,11 +23,4 @@ const assertArraysEqual = (actual, expected) => {
 
 };
 
-
-// test codes
-
-assertArraysEqual([1, 2, 3], [1, 2, 3]); // => true
-assertArraysEqual([1, 2, 3], [3, 2, 1, 4]); // => false
-
-assertArraysEqual(["1", "2", "3"], ["1", "2", "3"]); // => true
-assertArraysEqual(["1", "2", "3"], ["1", "2", 3]); // => false
+module.exports = assertArraysEqual

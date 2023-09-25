@@ -1,3 +1,5 @@
+const assertEqual = require("./assertEqual");
+
 // redoing the tail function to make sure i understand the concepts
 
 
@@ -16,7 +18,7 @@ const tail = (array) => {
       results.push(values);
     }
   }
-
+return results;
 };
 
 

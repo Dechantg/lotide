@@ -39,16 +39,16 @@ const eqArrays = function(actual, expected) {
   return true;
   
 };
+
 const shirtObject = { color: "red", size: "medium" };
 const anotherShirtObject = { size: "medium", color: "red" };
 
 
 
+// const longSleeveShirtObject = { size: "medium", color: "red", sleeveLength: "long" };
 
-const longSleeveShirtObject = { size: "medium", color: "red", sleeveLength: "long" };
-
-const multiColorShirtObject = { colors: ["red", "blue"], size: "medium" };
-const anotherMultiColorShirtObject = { size: "medium", colors: ["red", "blue"] };
+// const multiColorShirtObject = { colors: ["red", "blue"], size: "medium" };
+// const anotherMultiColorShirtObject = { size: "medium", colors: ["red", "blue"] };
 
 // const longSleeveMultiColorShirtObject= { size: "medium", colors: ["red", "blue"], sleeveLength: "long" };
 // eqObjects(multiColorShirtObject  , longSleeveMultiColorShirtObject); // => false
@@ -59,14 +59,21 @@ const anotherMultiColorShirtObject = { size: "medium", colors: ["red", "blue"] }
 
 const eqObjects = function(object1, object2) {
   // store the keys of the objects into arrays
-  let object1Keys = Object.keys(object1);
-  let object2Keys = Object.keys(object2);
+  const object1Keys = Object.keys(object1);
+  const object2Keys = Object.keys(object2);
   // console.log(object1Keys + object2Keys)
 
   // filter to make sure the lengths match else return false
   if (object1Keys.length !== object2Keys.length) {
     return false;
   }
+ 
+  // sort keys for consistent order
+ 
+  object1Keys.sort();
+  object2Keys.sort();
+
+
   // filter to make sure that the keys match (even if a different order)
 
   for (let i = 0; i < object1Keys.length; i++) {
@@ -74,6 +81,15 @@ const eqObjects = function(object1, object2) {
     if (!(object1Keys[i] in object2)) {
       return false;
     }
+
+    if (Array.isArray(object1[object1Keys[i]]) && Array.isArray(object2[object1Keys[i]])) {
+      const actual = object1[object1Keys[i]]
+      const expected = object2[object1Keys[i]]
+
+      if (!eqArrays(actual, expected)) {      return false;
+       }
+    }
+
     //filter the values of the keys against each other
     if (object1[object1Keys[i]] !== object2[object1Keys[i]]) {
       return false;
@@ -85,26 +101,28 @@ const eqObjects = function(object1, object2) {
 
 
 
-eqObjects(shirtObject, anotherShirtObject);
-
-eqObjects(shirtObject , anotherShirtObject); // => true
-
-eqObjects(shirtObject , longSleeveShirtObject); // => false
-
-eqObjects(multiColorShirtObject  , anotherMultiColorShirtObject); // => true
 
 
 // test codes for validation later
 
+const multiColorShirtObject = { colors: ["red", "blue"], size: "medium" };
 
-// eqObjects(shirtObject , anotherShirtObject); // => true
+const anotherMultiColorShirtObject = { size: "medium", colors: ["red", "blue"] };
 
-// const longSleeveShirtObject= { size: "medium", color: "red", sleeveLength: "long" };
-// eqObjects(shirtObject , longSleeveShirtObject); // => false
+const longSleeveShirtObject= { size: "medium", color: "red", sleeveLength: "long" };
 
-// const multiColorShirtObject = { colors: ["red", "blue"], size: "medium" };
-// const anotherMultiColorShirtObject = { size: "medium", colors: ["red", "blue"] };
-// eqObjects(multiColorShirtObject  , anotherMultiColorShirtObject); // => true
+const longSleeveMultiColorShirtObject= { size: "medium", colors: ["red", "blue"], sleeveLength: "long" };
 
-// const longSleeveMultiColorShirtObject= { size: "medium", colors: ["red", "blue"], sleeveLength: "long" };
-// eqObjects(multiColorShirtObject  , longSleeveMultiColorShirtObject); // => false
+
+
+
+console.log(eqObjects(multiColorShirtObject  , anotherMultiColorShirtObject)); // => false
+
+console.log(eqObjects(shirtObject, anotherShirtObject));
+
+console.log(eqObjects(shirtObject , anotherShirtObject)); // => true
+
+console.log(eqObjects(shirtObject , longSleeveShirtObject)); // => false
+
+console.log(eqObjects(multiColorShirtObject  , anotherMultiColorShirtObject)); // => true
+

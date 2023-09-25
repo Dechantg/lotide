@@ -11,7 +11,7 @@ const assertEqual = (actual, expected) => {
   // if the condition above is not met then return to console a failure result
   return console.log(`⛔️⛔️⛔️ Assertion Failed! ${actual} !== ${expected} ⛔️⛔️⛔️`);
 
-}
+};
 
 
 // TEST CODE

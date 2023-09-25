@@ -7,7 +7,7 @@ const eqArrays = function(actual, expected) {
   // compare array length. if lengths to not match immediatly return false
 
   if (actual.length !== expected.length) {
-          return false;
+    return false;
   }
 
   // create a loop to compare individual components in the arrays
@@ -32,7 +32,7 @@ const eqArrays = function(actual, expected) {
 
 const assertArraysEqual = (actual, expected) => {
 
-  // change function to send actual and expected to the eqArrays function and call for a true or false. If they do not equal true, 
+  // change function to send actual and expected to the eqArrays function and call for a true or false. If they do not equal true
 
 
   if (eqArrays(actual, expected) === true) {
@@ -42,7 +42,7 @@ const assertArraysEqual = (actual, expected) => {
   // if the condition above is not met then return to console a failure result
   return console.log(`⛔️⛔️⛔️ Assertion Failed! ${actual} !== ${expected} ⛔️⛔️⛔️`);
 
-}
+};
 
 const without = (array, value) => {
   // add empty array for storing results in after sorting
@@ -50,9 +50,9 @@ const without = (array, value) => {
   const result = [];
 
   // begin loop to look for the values to be removed
-  for (item of array) {
+  for (let item of array) {
     // set the filter to make sure the value is not being observed
-    if (item != value) {
+    if (item !== value) {
       // if filter is met push the value to the new array
       result.push(item);
     }

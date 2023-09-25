@@ -19,7 +19,7 @@ const assertEqual = function(actual, expected) {
     // if the condition above is not met then return to console a failure result
     return console.log(`⛔️⛔️⛔️ Assertion Failed! ${actual} !== ${expected} ⛔️⛔️⛔️`);
   
-  }
+  };
   
   
   // start head function
@@ -28,7 +28,7 @@ const assertEqual = function(actual, expected) {
     // return first value in the array
     return array[0];
   
-  }
+  };
   
   
   

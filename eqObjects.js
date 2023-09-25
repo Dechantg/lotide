@@ -22,7 +22,7 @@ const eqArrays = function(actual, expected) {
   // compare array length. if lengths to not match immediatly return false
 
   if (actual.length !== expected.length) {
-          return false;
+    return false;
   }
 
   // create a loop to compare individual components in the arrays
@@ -40,12 +40,12 @@ const eqArrays = function(actual, expected) {
   
 };
 const shirtObject = { color: "red", size: "medium" };
-const anotherShirtObject= { size: "medium", color: "red" };
+const anotherShirtObject = { size: "medium", color: "red" };
 
 
 
 
-const longSleeveShirtObject= { size: "medium", color: "red", sleeveLength: "long" };
+const longSleeveShirtObject = { size: "medium", color: "red", sleeveLength: "long" };
 
 const multiColorShirtObject = { colors: ["red", "blue"], size: "medium" };
 const anotherMultiColorShirtObject = { size: "medium", colors: ["red", "blue"] };
@@ -79,7 +79,7 @@ const eqObjects = function(object1, object2) {
       return false;
     }
   }
-return true;
+  return true;
 
 };
 

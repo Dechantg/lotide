@@ -15,7 +15,7 @@ const assertEqual = (actual, expected) => {
 
 };
 
-// create the function countLetters to analyse a string 
+// create the function countLetters to analyse a string
 
 const countLetters = (string) => {
 
@@ -34,16 +34,16 @@ const countLetters = (string) => {
 
       // if the letter is not already in the result, and does not equal a space, add it and go back to the loop
       if (letters !== " ") {
-    result[letters] = 1
+        result[letters] = 1;
+      }
     }
-  }
   }
 
   // console.log the result then return it to the function
 
   console.log(result);
 
-  return result
+  return result;
 
 };
 

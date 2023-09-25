@@ -39,14 +39,14 @@ const takeUntil = (array, callback) => {
   // start an empty array to hold results
 
   const newArray = [];
-//begin loop to go through the values
-  for (item of array) {
+  //begin loop to go through the values
+  for (let item of array) {
     //filter callback vs item if filter conditions match then break the function
     if (callback(item)) {
       break;
     }
     //push the values into the empty array until the break initializes
-   newArray.push(item);
+    newArray.push(item);
   }
   return newArray;
 };
@@ -55,7 +55,7 @@ const takeUntil = (array, callback) => {
 
 
 
-const expected1 = [ 1, 2, 5, 7, 2 ]
+const expected1 = [ 1, 2, 5, 7, 2 ];
 
 
 
@@ -72,9 +72,9 @@ console.log(results2);
 
 
 // --
-const expected2 = [ 'I\'ve', 'been', 'to', 'Hollywood' ]
+const expected2 = [ 'I\'ve', 'been', 'to', 'Hollywood' ];
 
-assertArraysEqual(eqArrays(results1, expected1), true); 
+assertArraysEqual(eqArrays(results1, expected1), true);
 //assertEqual(eqArrays(results1, expected1), true);
-assertArraysEqual(eqArrays(results2, expected2), true); 
+assertArraysEqual(eqArrays(results2, expected2), true);
 

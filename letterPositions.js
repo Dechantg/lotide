@@ -9,7 +9,7 @@ const eqArrays = function(actual, expected) {
   // compare array length. if lengths to not match immediatly return false
 
   if (actual.length !== expected.length) {
-          return false;
+    return false;
   }
 
   // create a loop to compare individual components in the arrays
@@ -34,7 +34,7 @@ const eqArrays = function(actual, expected) {
 
 const assertArraysEqual = (actual, expected) => {
 
-  // change function to send actual and expected to the eqArrays function and call for a true or false. If they do not equal true, 
+  // change function to send actual and expected to the eqArrays function and call for a true or false. If they do not equal true
 
 
   if (eqArrays(actual, expected) === true) {
@@ -44,7 +44,7 @@ const assertArraysEqual = (actual, expected) => {
   // if the condition above is not met then return to console a failure result
   return console.log(`⛔️⛔️⛔️ Assertion Failed! ${actual} !== ${expected} ⛔️⛔️⛔️`);
 
-}
+};
 
 
 
@@ -67,16 +67,16 @@ const letterPositions = (sentence) => {
 
       // if the letter is not already in the result, and does not equal a space, add the letter, then add the current position of the letter and go back to the loop
       if (letter !== " ") {
-    results[letter] = []
-    results[letter].push(i);
-    i++
-    }
+        results[letter] = [];
+        results[letter].push(i);
+        i++;
+      }
     
 
+    }
   }
-}
-console.log(results);
-return results;
+  console.log(results);
+  return results;
 };
 
 letterPositions("lighthouse in the house");

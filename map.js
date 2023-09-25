@@ -42,10 +42,10 @@ const map = function(array, callback) {
     results.push(callback(item));
   }
   return results;
-}
+};
 
-const results = map( words, word => word[0]);
+const results = map(words, word => word[0]);
 
 console.log(results);
 
-assertArraysEqual(results, ["g", "c", "t", "m", "t"], true );
+assertArraysEqual(results, ["g", "c", "t", "m", "t"], true);

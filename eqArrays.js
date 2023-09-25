@@ -12,7 +12,7 @@ const assertEqual = (actual, expected) => {
   // if the condition above is not met then return to console a failure result
   return console.log(`⛔️⛔️⛔️ Assertion Failed! ${actual} !== ${expected} ⛔️⛔️⛔️`);
 
-}
+};
 
 // create the eqArray function
 
@@ -21,7 +21,7 @@ const eqArrays = function(actual, expected) {
   // compare array length. if lengths to not match immediatly return false
 
   if (actual.length !== expected.length) {
-          return false;
+    return false;
   }
 
   // create a loop to compare individual components in the arrays
@@ -42,10 +42,10 @@ const eqArrays = function(actual, expected) {
 
 
 
-eqArrays([1, 2, 3], [1, 2, 3]) // => true
-eqArrays([1, 2, 3], [3, 2, 1, 4]) // => false
+eqArrays([1, 2, 3], [1, 2, 3]); // => true
+eqArrays([1, 2, 3], [3, 2, 1, 4]); // => false
 
-eqArrays(["1", "2", "3"], ["1", "2", "3"]) // => true
-eqArrays(["1", "2", "3"], ["1", "2", 3]) // => false
+eqArrays(["1", "2", "3"], ["1", "2", "3"]); // => true
+eqArrays(["1", "2", "3"], ["1", "2", 3]); // => false
 
 assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => should PASS

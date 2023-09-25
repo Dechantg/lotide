@@ -7,7 +7,7 @@ const eqArrays = function(actual, expected) {
   // compare array length. if lengths to not match immediatly return false
 
   if (actual.length !== expected.length) {
-          return false;
+    return false;
   }
 
   // create a loop to compare individual components in the arrays
@@ -32,7 +32,7 @@ const eqArrays = function(actual, expected) {
 
 const assertArraysEqual = (actual, expected) => {
 
-  // change function to send actual and expected to the eqArrays function and call for a true or false. If they do not equal true, 
+  // change function to send actual and expected to the eqArrays function and call for a true or false. If they do not equal true
 
 
   if (eqArrays(actual, expected) === true) {
@@ -42,7 +42,7 @@ const assertArraysEqual = (actual, expected) => {
   // if the condition above is not met then return to console a failure result
   return console.log(`⛔️⛔️⛔️ Assertion Failed! ${actual} !== ${expected} ⛔️⛔️⛔️`);
 
-}
+};
 
 // start function to determin what the middle numbers are
 
@@ -53,7 +53,7 @@ const middle = function(array) {
   const result = [];
   
   // filter for empty array and return an empty array if necessary
-  if (array.length === 0 ) {
+  if (array.length === 0) {
     return result;
   }
   

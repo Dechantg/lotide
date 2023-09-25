@@ -17,7 +17,7 @@ const assertEqual = (actual, expected) => {
 
 // test object
 
-const bestTVShowsByGenre = { 
+const bestTVShowsByGenre = {
   sci_fi: "The Expanse",
   comedy: "Brooklyn Nine-Nine",
   drama:  "The Wire"
@@ -31,11 +31,11 @@ const findKeyByValue = (object, value) => {
  
   // loop the array to compare the keys against their values in the object
 
-  for (key in object) {
+  for (let key in object) {
     if (object[key] === value) {
       // if comparison is true then return the key being observed
       return key;
-    }     
+    }
   }
 };
 

@@ -4,7 +4,7 @@
 const eqObjects = (object1, object2) => {
   let object1Keys = Object.keys(object1);
   let object2Keys = Object.keys(object2);
- console.log(object1Keys);
+  console.log(object1Keys);
   console.log(object2Keys);
   
   if (object1Keys.length !== object2Keys.length) {
@@ -42,7 +42,7 @@ const eqObjects = (object1, object2) => {
             return false;
           }
         }
-      return true;
+        return true;
       
       };
       
@@ -52,24 +52,24 @@ const eqObjects = (object1, object2) => {
       
       const assertObjectsEqual = (actual, expected) => {
       
-        const inspect = require('util').inspect; 
+        const inspect = require('util').inspect;
         
         if (eqObjects(actual, expected)) {
           console.log(`✅✅✅ Assertion Passed! ${inspect(actual)} === ${inspect(expected)} ✅✅✅`);
           return;
-        } 
+        }
       
-          console.log(`⛔️⛔️⛔️ Assertion Failed! ${inspect(actual)} !== ${inspect(expected)} ⛔️⛔️⛔️`);
-          return;
+        console.log(`⛔️⛔️⛔️ Assertion Failed! ${inspect(actual)} !== ${inspect(expected)} ⛔️⛔️⛔️`);
+        return;
       
       };
       
       
-      const shirtObject = { 
-        color: "red", size: "medium", 
+      const shirtObject = {
+        color: "red", size: "medium",
         // brand: "nike"
       };
-      const anotherShirtObject= { size: "medium", color: "red" };
+      const anotherShirtObject = { size: "medium", color: "red" };
       //eqObjects(shirtObject , anotherShirtObject); // => true
       assertObjectsEqual(shirtObject , anotherShirtObject); // => true
       
@@ -89,19 +89,19 @@ const assertObjectsEqual = (actual, expected) => {
   if (eqObjects(actual, expected)) {
     console.log(`✅✅✅ Assertion Passed! ${inspect(actual)} === ${inspect(expected)} ✅✅✅`);
     return;
-  } 
+  }
 
-    console.log(`⛔️⛔️⛔️ Assertion Failed! ${inspect(actual)} !== ${inspect(expected)} ⛔️⛔️⛔️`);
-    return;
+  console.log(`⛔️⛔️⛔️ Assertion Failed! ${inspect(actual)} !== ${inspect(expected)} ⛔️⛔️⛔️`);
+  return;
 
 };
 
 
-const shirtObject = { 
-  color: "red", size: "medium", 
+const shirtObject = {
+  color: "red", size: "medium",
   // brand: "nike"
 };
-const anotherShirtObject= { size: "medium", color: "red" };
+const anotherShirtObject = { size: "medium", color: "red" };
 //eqObjects(shirtObject , anotherShirtObject); // => true
 assertObjectsEqual(shirtObject , anotherShirtObject); // => true
 

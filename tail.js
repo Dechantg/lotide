@@ -12,7 +12,7 @@ const assertEqual = (actual, expected) => {
   // if the condition above is not met then return to console a failure result
   return console.log(`⛔️⛔️⛔️ Assertion Failed! ${actual} !== ${expected} ⛔️⛔️⛔️`);
 
-}
+};
 
 // start tail function to return everything except for the first value
 
@@ -22,16 +22,17 @@ const tail = (array) => {
   const results = [];
 
   // start loop to go through the array
-  for (values of array) {
+  for (let values of array) {
     // filter to make sure first value is not included
     if (values !== array[0]) {
       // if filter criteria met, push the value into new array
-      results.push(values);    }
+      results.push(values);
+    }
   }
 
 };
 
-// Test Case: Check the original array 
+// Test Case: Check the original array
 const words = ["Yo Yo", "Lighthouse", "Labs"];
 tail(words); // no need to capture the return value since we are not checking it
 assertEqual(words.length, 3); // original array should still have 3 elements!

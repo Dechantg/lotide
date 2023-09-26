@@ -1,18 +1,14 @@
 
 //returns the first value of an array
-
-  const assertEqual = require('./assertEqual');
-  
-
   
   
-  // start head function
+// start head function
   
-  const head = (array) => {
-    // return first value in the array
-    return array[0];
+const head = (array) => {
+  // return first value in the array
+  return array[0];
   
-  };
+};
 
 
 module.exports = head;

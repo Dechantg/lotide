@@ -35,11 +35,12 @@ const eqObjects = function(object1, object2) {
     }
 
     if (Array.isArray(object1[object1Keys[i]]) && Array.isArray(object2[object1Keys[i]])) {
-      const actual = object1[object1Keys[i]]
-      const expected = object2[object1Keys[i]]
+      const actual = object1[object1Keys[i]];
+      const expected = object2[object1Keys[i]];
 
-      if (!eqArrays(actual, expected)) {      return false;
-       }
+      if (!eqArrays(actual, expected)) {
+        return false;
+      }
     }
 
     //filter the values of the keys against each other
@@ -51,9 +52,4 @@ const eqObjects = function(object1, object2) {
 
 };
 
-
-
-
-
-
-module.exports = eqObjects
+module.exports = eqObjects;

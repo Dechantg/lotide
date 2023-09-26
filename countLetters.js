@@ -33,7 +33,7 @@ const countLetters = (string) => {
 
 };
 
-module.exports = countLetters
+module.exports = countLetters;
 
 
 

@@ -1,14 +1,6 @@
 
-// const assertEqual = function(actual, expected) {
-//   if (actual === expected) {
-//     console.log(`✅✅✅ Assertion Passed! ${actual} === ${expected} ✅✅✅`);
-//   } else {
-//     console.log(`⛔️⛔️⛔️ Assertion Failed! ${actual} !== ${expected} ⛔️⛔️⛔️`);
-//   }
-//   // redoing the head function to make sure i understand how the principals in lotide work
-  
-  // copy in assertEqual function for validations
-  
+//returns the first value of an array
+
   const assertEqual = require('./assertEqual');
   
 

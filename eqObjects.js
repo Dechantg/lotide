@@ -3,55 +3,7 @@
 
 // copy in assertEqual function as a validator
 
-
-const assertEqual = (actual, expected) => {
-
-  // create comparison for strings. If strings are absolutely equal then immedatly return a pass and exit the function.
-  if (actual === expected) {
-    return console.log(`✅✅✅ Assertion Passed! ${actual} === ${expected} ✅✅✅`);
-  }
-
-  // if the condition above is not met then return to console a failure result
-  return console.log(`⛔️⛔️⛔️ Assertion Failed! ${actual} !== ${expected} ⛔️⛔️⛔️`);
-
-};
-
-
-const eqArrays = function(actual, expected) {
-
-  // compare array length. if lengths to not match immediatly return false
-
-  if (actual.length !== expected.length) {
-    return false;
-  }
-
-  // create a loop to compare individual components in the arrays
-
-  for (let i = 0; i < actual.length; i++) {
-    if (actual[i] !== expected[i]) {
-      return false;
-    }
-   
-  }
-
-  // if neither of the above conditions fail, return true
-  
-  return true;
-  
-};
-
-const shirtObject = { color: "red", size: "medium" };
-const anotherShirtObject = { size: "medium", color: "red" };
-
-
-
-// const longSleeveShirtObject = { size: "medium", color: "red", sleeveLength: "long" };
-
-// const multiColorShirtObject = { colors: ["red", "blue"], size: "medium" };
-// const anotherMultiColorShirtObject = { size: "medium", colors: ["red", "blue"] };
-
-// const longSleeveMultiColorShirtObject= { size: "medium", colors: ["red", "blue"], sleeveLength: "long" };
-// eqObjects(multiColorShirtObject  , longSleeveMultiColorShirtObject); // => false
+const eqArrays = require('./eqArrays');
 
 
 // Returns true if both objects have identical keys with identical values.
@@ -103,26 +55,5 @@ const eqObjects = function(object1, object2) {
 
 
 
-// test codes for validation later
 
-const multiColorShirtObject = { colors: ["red", "blue"], size: "medium" };
-
-const anotherMultiColorShirtObject = { size: "medium", colors: ["red", "blue"] };
-
-const longSleeveShirtObject= { size: "medium", color: "red", sleeveLength: "long" };
-
-const longSleeveMultiColorShirtObject= { size: "medium", colors: ["red", "blue"], sleeveLength: "long" };
-
-
-
-
-console.log(eqObjects(multiColorShirtObject  , anotherMultiColorShirtObject)); // => false
-
-console.log(eqObjects(shirtObject, anotherShirtObject));
-
-console.log(eqObjects(shirtObject , anotherShirtObject)); // => true
-
-console.log(eqObjects(shirtObject , longSleeveShirtObject)); // => false
-
-console.log(eqObjects(multiColorShirtObject  , anotherMultiColorShirtObject)); // => true
-
+module.exports = eqObjects

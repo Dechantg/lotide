@@ -1,20 +1,6 @@
 // recreating a count letters function in a fresh file then copy pasting over to make sure I understand the principles
 
 
-// copy paste in my assertEqual for later validation
-
-const assertEqual = (actual, expected) => {
-
-  // create comparison for strings. If strings are absolutely equal then immedatly return a pass and exit the function.
-  if (actual === expected) {
-    return console.log(`✅✅✅ Assertion Passed! ${actual} === ${expected} ✅✅✅`);
-  }
-
-  // if the condition above is not met then return to console a failure result
-  return console.log(`⛔️⛔️⛔️ Assertion Failed! ${actual} !== ${expected} ⛔️⛔️⛔️`);
-
-};
-
 // create the function countLetters to analyse a string
 
 const countLetters = (string) => {
@@ -47,8 +33,7 @@ const countLetters = (string) => {
 
 };
 
-countLetters("test string");
-assertEqual(countLetters("test string").t, 3);
+module.exports = countLetters
 
 
 
